@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-container": "#4b8eff",
+              "surface": "#111415",
+              "on-secondary-fixed": "#00105c",
+              "surface-bright": "#373a3b",
+              "on-primary": "#002e69",
+              "tertiary-container": "#00a741",
+              "on-primary-container": "#00285c",
+              "on-tertiary": "#003911",
+              "on-background": "#e1e3e4",
+              "primary-fixed": "#d8e2ff",
+              "inverse-surface": "#e1e3e4",
+              "tertiary": "#53e16f",
+              "primary": "#adc6ff",
+              "on-secondary-container": "#a8b4ff",
+              "tertiary-fixed": "#72fe88",
+              "secondary-fixed": "#dee0ff",
+              "surface-container": "#1d2021",
+              "surface-container-low": "#191c1d",
+              "surface-container-highest": "#323536",
+              "on-error-container": "#ffdad6",
+              "outline": "#8b90a0",
+              "on-tertiary-fixed": "#002107",
+              "secondary": "#bac3ff",
+              "on-secondary": "#08218a",
+              "on-tertiary-container": "#00320e",
+              "primary-fixed-dim": "#adc6ff",
+              "on-surface-variant": "#c1c6d7",
+              "surface-tint": "#adc6ff",
+              "background": "#111415",
+              "surface-variant": "#323536",
+              "on-surface": "#e1e3e4",
+              "outline-variant": "#414755",
+              "error": "#ffb4ab",
+              "on-error": "#690005",
+              "inverse-on-surface": "#2e3132",
+              "on-tertiary-fixed-variant": "#00531c",
+              "on-primary-fixed-variant": "#004493",
+              "on-secondary-fixed-variant": "#293ca0",
+              "inverse-primary": "#005bc1",
+              "error-container": "#93000a",
+              "on-primary-fixed": "#001a41",
+              "secondary-container": "#2c3ea3",
+              "surface-dim": "#111415",
+              "secondary-fixed-dim": "#bac3ff",
+              "tertiary-fixed-dim": "#53e16f",
+              "surface-container-high": "#282a2b",
+              "surface-container-lowest": "#0c0f10"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-sidebar {
+        background: rgba(17, 20, 21, 0.8);
+        backdrop-filter: blur(20px);
+      }
+      .glass-topbar {
+        background: rgba(17, 20, 21, 0.5);
+        backdrop-filter: blur(12px);
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-64 border-r border-[#323536]/10 bg-[#111415]/80 backdrop-blur-xl flex flex-col py-6 px-4 z-50">
+<div class="flex items-center gap-3 mb-10 px-2">
+<div class="w-8 h-8 rounded bg-gradient-to-br from-primary to-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container text-xl" style="font-variation-settings: 'FILL' 1;">mail</span>
+</div>
+<div>
+<h1 class="text-2xl font-bold tracking-tight text-[#adc6ff] font-manrope">UrMail</h1>
+<p class="text-[0.625rem] font-label uppercase tracking-widest text-outline">Autonomous Ops</p>
+</div>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded transition-all duration-300 text-[#d1d3d4] hover:text-[#adc6ff] hover:bg-[#323536]/50" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[0.6875rem] font-label uppercase tracking-wider">Executive Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded transition-all duration-300 text-[#d1d3d4] hover:text-[#adc6ff] hover:bg-[#323536]/50" href="#">
+<span class="material-symbols-outlined">inbox</span>
+<span class="text-[0.6875rem] font-label uppercase tracking-wider">Smart Inbox</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded transition-all duration-300 text-[#adc6ff] font-bold border-r-2 border-[#adc6ff] bg-[#adc6ff]/5" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<span class="text-[0.6875rem] font-label uppercase tracking-wider">Email Intelligence</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded transition-all duration-300 text-[#d1d3d4] hover:text-[#adc6ff] hover:bg-[#323536]/50" href="#">
+<span class="material-symbols-outlined">database</span>
+<span class="text-[0.6875rem] font-label uppercase tracking-wider">Knowledge Base</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 space-y-4">
+<button class="w-full py-3 rounded bg-gradient-to-br from-primary to-primary-container text-on-primary-container font-headline font-bold text-sm shadow-lg shadow-primary/10 hover:scale-[0.98] transition-all duration-300">
+                Compose Agent
+            </button>
+<div class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-[#d1d3d4] hover:text-[#adc6ff] transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">settings</span>
+<span class="text-[0.6875rem] font-label uppercase tracking-wider">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-[#d1d3d4] hover:text-[#adc6ff] transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">help_outline</span>
+<span class="text-[0.6875rem] font-label uppercase tracking-wider">Support</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 left-64 h-16 bg-[#111415]/50 backdrop-blur-lg flex justify-between items-center px-8 z-40">
+<div class="flex items-center gap-4 flex-1 max-w-xl">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg">search</span>
+<input class="w-full bg-surface-container-highest/30 border-none rounded-lg py-2 pl-10 pr-4 text-sm focus:ring-1 focus:ring-primary/50 placeholder:text-outline-variant" placeholder="Search intelligence logs..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-[#d1d3d4]">
+<button class="hover:text-[#53e16f] transition-colors"><span class="material-symbols-outlined">sensors</span></button>
+<button class="hover:text-[#53e16f] transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-tertiary rounded-full"></span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant/20 mx-2"></div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<p class="text-[0.6875rem] font-label uppercase tracking-widest text-on-surface">Alex Rivera</p>
+<p class="text-[0.625rem] text-outline">Executive User</p>
+</div>
+<img alt="Executive User Profile" class="w-10 h-10 rounded-full object-cover border border-primary/20" data-alt="close-up portrait of a professional man in a dark suit with soft studio lighting and a neutral grey background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHlol71-WibQPQDTyFYYIRP_I9H0GLO8pB_a3BsZBES6c4TWL2jAtiRioVxnaWRdKy21TH7ZunL0JknBST9a5Ceo5ZNVT-u5XmyYBtp-HOBMxuvZtAwpuSkF1JrcfQndgG6IhTOl5gC1lQrNjDoCwk1h1ENeESOgYPdBA2VKPQJI6ag6W-LPB0OTdKha95Y_JOAbpwEyFYhekhxVV9EUtyeCDU8G4jWzfxwlx4Zbir9OzyoZuK2IP7ijvqyAnN9N_xLsh6darSa0ZM"/>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-64 pt-24 p-8 pb-20">
+<div class="max-w-7xl mx-auto space-y-8">
+<!-- Breadcrumbs & Header -->
+<div class="flex justify-between items-end">
+<div class="space-y-1">
+<nav class="flex items-center gap-2 text-outline text-[0.6875rem] font-label uppercase tracking-widest">
+<span>Inbox</span>
+<span class="material-symbols-outlined text-[10px]">chevron_right</span>
+<span class="text-primary">Intelligence Detail</span>
+</nav>
+<h2 class="text-4xl font-headline font-bold tracking-tight">Order Delay Inquiry</h2>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 bg-surface-container rounded-lg text-xs font-label uppercase tracking-widest border border-outline-variant/10 hover:bg-surface-container-high transition-colors">
+                        Mark as Resolved
+                    </button>
+<button class="px-4 py-2 bg-error-container/20 text-error rounded-lg text-xs font-label uppercase tracking-widest border border-error/10 hover:bg-error-container/30 transition-colors">
+                        Flag Escalation
+                    </button>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Left Column: Email Thread & Summary -->
+<div class="col-span-12 lg:col-span-7 space-y-6">
+<!-- Original Email Card -->
+<div class="bg-surface-container rounded-lg p-6 relative overflow-hidden">
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary">person</span>
+</div>
+<div>
+<p class="font-headline font-bold text-on-surface">Sarah Jenkins</p>
+<p class="text-xs text-outline">sarah.j@example.com • 2 hours ago</p>
+</div>
+</div>
+<span class="px-2 py-1 bg-surface-variant text-on-surface-variant text-[10px] font-label uppercase rounded">Customer Inquiry</span>
+</div>
+<div class="space-y-4 text-on-surface-variant leading-relaxed">
+<p class="font-bold text-on-surface">Subject: Where is my order? (#88219)</p>
+<p class="text-sm">Hi support team,</p>
+<p class="text-sm">I'm writing because my order #88219 was supposed to arrive last Friday. It's now Wednesday and I haven't received any updates. The tracking page just says "In Transit" but hasn't moved in 5 days.</p>
+<p class="text-sm">Can someone please look into this? I needed these items for a project this weekend.</p>
+</div>
+</div>
+<!-- AI Summary & Action Items -->
+<div class="bg-surface-container rounded-lg p-6 border-l-2 border-tertiary">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-tertiary text-lg" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<h3 class="font-headline font-bold text-sm tracking-wide uppercase">AI Intelligence Summary</h3>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 bg-surface-container-low p-4 rounded-lg">
+                            Customer is inquiring about a <span class="text-tertiary font-bold">5-day delay</span> in their order delivery. The tracking status is stagnant. High priority due to specific weekend deadline mention.
+                        </p>
+<div class="space-y-3">
+<h4 class="text-[0.625rem] font-label uppercase tracking-widest text-outline">Recommended Action Items</h4>
+<div class="space-y-2">
+<div class="flex items-center gap-3 text-sm p-3 bg-surface-container-low rounded-lg border border-outline-variant/5">
+<span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-[10px] font-bold">1</span>
+<span>Check order status in ERP</span>
+</div>
+<div class="flex items-center gap-3 text-sm p-3 bg-surface-container-low rounded-lg border border-outline-variant/5">
+<span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-[10px] font-bold">2</span>
+<span>Apologize for delay and express empathy</span>
+</div>
+<div class="flex items-center gap-3 text-sm p-3 bg-surface-container-low rounded-lg border border-outline-variant/5">
+<span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-[10px] font-bold">3</span>
+<span>Provide new ETA based on latest logistics data</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Decision Engine & RAG -->
+<div class="col-span-12 lg:col-span-5 space-y-6">
+<!-- Decision Engine Panel -->
+<div class="bg-surface-container-high rounded-lg p-6 shadow-2xl shadow-black/40 border border-primary/5">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline font-bold text-primary">Decision Engine</h3>
+<div class="text-right">
+<p class="text-[0.625rem] font-label text-outline uppercase">Confidence Score</p>
+<p class="text-xl font-headline font-extrabold text-tertiary">0.94 <span class="text-xs font-normal text-outline ml-1">(High)</span></p>
+</div>
+</div>
+<div class="mb-6">
+<label class="text-[0.625rem] font-label text-outline uppercase block mb-2">Automated Decision</label>
+<div class="px-4 py-2 bg-primary/10 text-primary border border-primary/20 rounded-lg font-bold text-center tracking-widest text-xs">
+                                AUTO_REPLY
+                            </div>
+</div>
+<div class="mb-6">
+<label class="text-[0.625rem] font-label text-outline uppercase block mb-2">Drafted Reply</label>
+<div class="bg-surface-container-lowest p-4 rounded-lg border border-outline-variant/20 text-xs text-on-surface-variant leading-relaxed">
+                                Hello Sarah, <br/><br/>
+                                I am truly sorry for the delay with your order #88219. I've checked our system and it appears there was a logistics bottleneck at the regional hub. Your order is now back in transit and is <span class="text-primary font-bold">expected within 3–5 days.</span> <br/><br/>
+                                We appreciate your patience as we resolve this.
+                            </div>
+</div>
+<div class="grid grid-cols-1 gap-3">
+<button class="w-full py-3 bg-gradient-to-br from-primary to-primary-container text-on-primary-container font-headline font-bold text-sm rounded shadow-lg shadow-primary/20 hover:scale-[0.99] transition-all">
+                                Approve &amp; Send
+                            </button>
+<div class="grid grid-cols-2 gap-3">
+<button class="py-2.5 bg-surface-container-highest text-on-surface text-xs font-bold rounded border border-outline-variant/20 hover:bg-surface-variant transition-colors">
+                                    Edit Draft
+                                </button>
+<button class="py-2.5 bg-surface-container-highest text-error text-xs font-bold rounded border border-error/10 hover:bg-error-container/10 transition-colors">
+                                    Escalate to Human
+                                </button>
+</div>
+</div>
+</div>
+<!-- RAG Context Widget -->
+<div class="bg-surface-container rounded-lg p-6">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-outline text-lg">database</span>
+<h3 class="font-headline font-bold text-sm tracking-wide uppercase">RAG Context Context</h3>
+</div>
+<div class="space-y-4">
+<div class="p-3 bg-surface-container-low rounded-lg border-l-2 border-primary/40">
+<p class="text-[0.625rem] font-label text-primary uppercase mb-1">Knowledge Base Snippet</p>
+<p class="text-[0.8rem] text-on-surface-variant italic">"FAQ: Shipping Policy - Standard domestic shipping typically takes 3-5 business days delivery from the date of dispatch."</p>
+</div>
+<div class="p-3 bg-surface-container-low rounded-lg border-l-2 border-outline-variant/40">
+<p class="text-[0.625rem] font-label text-outline uppercase mb-1">Customer CRM Context</p>
+<p class="text-[0.8rem] text-on-surface-variant">Last interaction 3 months ago: Order #7712 completed successfully. Customer tier: Gold.</p>
+</div>
+</div>
+</div>
+<!-- Activity Log -->
+<div class="bg-surface-container rounded-lg p-6">
+<h3 class="font-headline font-bold text-sm tracking-wide uppercase mb-6">Processing Pipeline</h3>
+<div class="relative space-y-6 before:absolute before:left-[7px] before:top-2 before:bottom-2 before:w-[2px] before:bg-outline-variant/20">
+<div class="relative pl-8 flex items-center justify-between">
+<div class="absolute left-0 w-4 h-4 rounded-full bg-tertiary/20 border-2 border-tertiary flex items-center justify-center">
+<div class="w-1.5 h-1.5 rounded-full bg-tertiary"></div>
+</div>
+<span class="text-xs font-medium text-on-surface">Ingested</span>
+<span class="text-[10px] text-outline font-label uppercase">14:02:11</span>
+</div>
+<div class="relative pl-8 flex items-center justify-between">
+<div class="absolute left-0 w-4 h-4 rounded-full bg-tertiary/20 border-2 border-tertiary flex items-center justify-center">
+<div class="w-1.5 h-1.5 rounded-full bg-tertiary"></div>
+</div>
+<span class="text-xs font-medium text-on-surface">Classified (Inquiry)</span>
+<span class="text-[10px] text-outline font-label uppercase">14:02:14</span>
+</div>
+<div class="relative pl-8 flex items-center justify-between">
+<div class="absolute left-0 w-4 h-4 rounded-full bg-tertiary/20 border-2 border-tertiary flex items-center justify-center">
+<div class="w-1.5 h-1.5 rounded-full bg-tertiary"></div>
+</div>
+<span class="text-xs font-medium text-on-surface">Context Retrieved</span>
+<span class="text-[10px] text-outline font-label uppercase">14:02:18</span>
+</div>
+<div class="relative pl-8 flex items-center justify-between">
+<div class="absolute left-0 w-4 h-4 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center">
+<div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+</div>
+<span class="text-xs font-bold text-primary">Reply Generated</span>
+<span class="text-[10px] text-outline font-label uppercase">14:02:22</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Contextual FAB - suppressed for details page -->
+<!-- Navigation Shell Active State Mapping: "Email Intelligence" is marked active in SideNavBar -->
+</body></html>

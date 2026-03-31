@@ -1,0 +1,22 @@
+# dependencies
+node_modules/
+__pycache__/
+*.pyc
+.env
+*.egg-info/
+
+# build
+dist/
+build/
+
+# data
+chroma_data/
+*.db
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

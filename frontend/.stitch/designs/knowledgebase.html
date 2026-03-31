@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UrMail AEOS | Knowledge Base Manager</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-container": "#4b8eff",
+                        "surface": "#111415",
+                        "on-secondary-fixed": "#00105c",
+                        "surface-bright": "#373a3b",
+                        "on-primary": "#002e69",
+                        "tertiary-container": "#00a741",
+                        "on-primary-container": "#00285c",
+                        "on-tertiary": "#003911",
+                        "on-background": "#e1e3e4",
+                        "primary-fixed": "#d8e2ff",
+                        "inverse-surface": "#e1e3e4",
+                        "tertiary": "#53e16f",
+                        "primary": "#adc6ff",
+                        "on-secondary-container": "#a8b4ff",
+                        "tertiary-fixed": "#72fe88",
+                        "secondary-fixed": "#dee0ff",
+                        "surface-container": "#1d2021",
+                        "surface-container-low": "#191c1d",
+                        "surface-container-highest": "#323536",
+                        "on-error-container": "#ffdad6",
+                        "outline": "#8b90a0",
+                        "on-tertiary-fixed": "#002107",
+                        "secondary": "#bac3ff",
+                        "on-secondary": "#08218a",
+                        "on-tertiary-container": "#00320e",
+                        "primary-fixed-dim": "#adc6ff",
+                        "on-surface-variant": "#c1c6d7",
+                        "surface-tint": "#adc6ff",
+                        "background": "#111415",
+                        "surface-variant": "#323536",
+                        "on-surface": "#e1e3e4",
+                        "outline-variant": "#414755",
+                        "error": "#ffb4ab",
+                        "on-error": "#690005",
+                        "inverse-on-surface": "#2e3132",
+                        "on-tertiary-fixed-variant": "#00531c",
+                        "on-primary-fixed-variant": "#004493",
+                        "on-secondary-fixed-variant": "#293ca0",
+                        "inverse-primary": "#005bc1",
+                        "error-container": "#93000a",
+                        "on-primary-fixed": "#001a41",
+                        "secondary-container": "#2c3ea3",
+                        "surface-dim": "#111415",
+                        "secondary-fixed-dim": "#bac3ff",
+                        "tertiary-fixed-dim": "#53e16f",
+                        "surface-container-high": "#282a2b",
+                        "surface-container-lowest": "#0c0f10"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-sidebar {
+            background: rgba(17, 20, 21, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .glass-topbar {
+            background: rgba(17, 20, 21, 0.5);
+            backdrop-filter: blur(12px);
+        }
+        .luminous-button {
+            background: linear-gradient(135deg, #adc6ff 0%, #4b8eff 100%);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30">
+<!-- SideNavBar (Shared Component) -->
+<nav class="fixed left-0 top-0 h-full w-64 flex flex-col py-6 px-4 bg-[#111415]/80 backdrop-blur-xl border-r border-[#323536]/10 z-50">
+<div class="flex items-center gap-3 px-2 mb-8">
+<div class="w-10 h-10 rounded bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="psychology">psychology</span>
+</div>
+<div>
+<h1 class="text-2xl font-bold tracking-tight text-[#adc6ff] font-manrope">UrMail</h1>
+<p class="text-[0.6875rem] font-label uppercase tracking-wider text-outline">Autonomous Ops</p>
+</div>
+</div>
+<button class="luminous-button text-on-primary-container font-semibold py-3 px-4 rounded-lg flex items-center justify-center gap-2 mb-8 transition-transform active:scale-95 shadow-[0px_10px_30px_rgba(173,198,255,0.2)]">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+<span class="font-label">Compose Agent</span>
+</button>
+<div class="flex-1 space-y-2 overflow-y-auto no-scrollbar">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-[#d1d3d4] hover:text-[#adc6ff] hover:bg-[#323536]/50 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-sm font-medium">Executive Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-[#d1d3d4] hover:text-[#adc6ff] hover:bg-[#323536]/50 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="inbox">inbox</span>
+<span class="text-sm font-medium">Smart Inbox</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-[#d1d3d4] hover:text-[#adc6ff] hover:bg-[#323536]/50 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="text-sm font-medium">Email Intelligence</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-[#adc6ff] font-bold border-r-2 border-[#adc6ff] bg-[#adc6ff]/5" href="#">
+<span class="material-symbols-outlined" data-icon="database">database</span>
+<span class="text-sm font-medium">Knowledge Base</span>
+</a>
+</div>
+<div class="mt-auto pt-6 border-t border-outline-variant/10 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-[#d1d3d4] hover:text-[#adc6ff] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-sm">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-[#d1d3d4] hover:text-[#adc6ff] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span class="text-sm">Support</span>
+</a>
+</div>
+</nav>
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 right-0 left-64 h-16 flex justify-between items-center px-8 z-40 bg-[#111415]/50 backdrop-blur-lg">
+<div class="flex items-center bg-surface-container-highest/30 px-4 py-2 rounded-full w-96 border border-outline-variant/10">
+<span class="material-symbols-outlined text-outline text-xl" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full placeholder:text-outline/50" placeholder="Search Intelligence..." type="text"/>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-[#53e16f] transition-colors cursor-pointer" data-icon="sensors">sensors</span>
+<div class="relative">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-[#53e16f] transition-colors cursor-pointer" data-icon="notifications">notifications</span>
+<span class="absolute -top-1 -right-1 w-2 h-2 bg-tertiary rounded-full"></span>
+</div>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant/20"></div>
+<div class="flex items-center gap-3 group cursor-pointer">
+<div class="text-right">
+<p class="text-xs font-headline font-bold text-on-surface">Alex Sterling</p>
+<p class="text-[10px] text-primary/70 uppercase tracking-tighter">Pro Executive</p>
+</div>
+<img alt="Executive User Profile" class="w-10 h-10 rounded-full border-2 border-primary/20 group-hover:border-primary transition-all" data-alt="close-up portrait of a confident male executive in a dark suit with a neutral professional background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6KPdwqx3KiTH-dmwefoUomxpovCJlVCSkQV2ouBPkvg_GGsy5YGGA7NNQvIgh2qz5JH-cF4eFr6nw9K5CL2FCvulD1I3XVmwrPXM9-2_0i-m9pmLX5zS5ZZ3BlLTord_J4WezKnfn3dQFuSDPvF0vtnEbXlY5hv7v1PhUSsUTtALenc-dhdApelrsoA2qZzdJwZQLeg8aKb3PcAviffE0bjFQql8fAudNTEe8D37EHE9_WmipTHdmPVkGtXkrwTsGgVr2Abd16I8i"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 pb-12 px-8 min-h-screen">
+<!-- Header Section with Subscription Tracker -->
+<div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-10">
+<div>
+<h2 class="text-4xl font-headline font-extrabold text-on-surface tracking-tight mb-2">Knowledge Bases</h2>
+<p class="text-on-surface-variant max-w-xl">Manage the high-fidelity data sources powering your autonomous agents. These stores provide the semantic context for all AI-driven communications.</p>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl border-l-4 border-primary flex items-center gap-6 shadow-xl">
+<div class="flex flex-col">
+<span class="text-[0.6875rem] font-label text-outline uppercase tracking-widest mb-1">Subscription Limit</span>
+<div class="flex items-baseline gap-2">
+<span class="text-2xl font-headline font-bold text-primary">2 <span class="text-sm font-normal text-outline">of</span> 5</span>
+<span class="text-xs text-on-surface-variant">KBs Active</span>
+</div>
+</div>
+<div class="h-10 w-[1px] bg-outline-variant/20"></div>
+<div class="flex flex-col">
+<span class="text-[0.6875rem] font-label text-outline uppercase tracking-widest mb-1">Status</span>
+<span class="text-sm font-medium text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="history">history</span>
+                        23 days until reset
+                    </span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-8">
+<!-- Left Column: Knowledge Base List (Bento-style Cards) -->
+<div class="col-span-12 lg:col-span-8 space-y-4">
+<div class="flex items-center justify-between mb-2">
+<h3 class="text-lg font-headline font-bold text-on-surface">Active Repositories</h3>
+<button class="text-primary text-xs font-label uppercase tracking-widest flex items-center gap-1 hover:underline">
+                        View All Archives <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<!-- KB Card 1 -->
+<div class="group bg-surface-container rounded-lg p-6 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-tertiary/40"></div>
+<div class="flex items-start gap-5">
+<div class="w-12 h-12 rounded bg-surface-container-highest flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-3xl" data-icon="support_agent">support_agent</span>
+</div>
+<div>
+<h4 class="text-lg font-headline font-bold text-on-surface mb-1">Customer Support KB</h4>
+<div class="flex flex-wrap gap-x-4 gap-y-2">
+<span class="flex items-center gap-1 text-xs text-outline">
+<span class="material-symbols-outlined text-[14px]" data-icon="description">description</span> 5 Documents
+                                </span>
+<span class="flex items-center gap-1 text-xs text-outline">
+<span class="material-symbols-outlined text-[14px]" data-icon="grid_view">grid_view</span> 120 Chunks
+                                </span>
+<span class="flex items-center gap-1 text-xs text-outline">
+<span class="material-symbols-outlined text-[14px]" data-icon="update">update</span> 2h ago
+                                </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="text-right hidden md:block">
+<span class="bg-tertiary/10 text-tertiary text-[10px] font-label px-2 py-1 rounded uppercase tracking-tighter">Free Tier Active</span>
+<p class="text-[10px] text-outline mt-1 italic">Active for 7 days</p>
+</div>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+<!-- KB Card 2 -->
+<div class="group bg-surface-container rounded-lg p-6 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary/40"></div>
+<div class="flex items-start gap-5">
+<div class="w-12 h-12 rounded bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl" data-icon="point_of_sale">point_of_sale</span>
+</div>
+<div>
+<h4 class="text-lg font-headline font-bold text-on-surface mb-1">Sales SOPs</h4>
+<div class="flex flex-wrap gap-x-4 gap-y-2">
+<span class="flex items-center gap-1 text-xs text-outline">
+<span class="material-symbols-outlined text-[14px]" data-icon="description">description</span> 12 Documents
+                                </span>
+<span class="flex items-center gap-1 text-xs text-outline">
+<span class="material-symbols-outlined text-[14px]" data-icon="grid_view">grid_view</span> 840 Chunks
+                                </span>
+<span class="flex items-center gap-1 text-xs text-outline">
+<span class="material-symbols-outlined text-[14px]" data-icon="update">update</span> 1d ago
+                                </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="text-right hidden md:block">
+<span class="bg-primary/10 text-primary text-[10px] font-label px-2 py-1 rounded uppercase tracking-tighter">Premium Active</span>
+<p class="text-[10px] text-outline mt-1 italic">Managed by Agent X</p>
+</div>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Processing Card -->
+<div class="bg-surface-container-high/50 border border-outline-variant/10 rounded-lg p-8">
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full border-2 border-primary border-t-transparent animate-spin flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="sync">sync</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface">Legal Compliance Drafts</h4>
+<p class="text-xs text-primary">Processing Intelligence...</p>
+</div>
+</div>
+<span class="text-[0.6875rem] font-label text-outline uppercase">65% Complete</span>
+</div>
+<div class="relative h-2 w-full bg-surface-container rounded-full overflow-hidden mb-8">
+<div class="absolute top-0 left-0 h-full w-[65%] luminous-button rounded-full"></div>
+</div>
+<div class="grid grid-cols-3 gap-4">
+<div class="flex flex-col items-center text-center opacity-100 transition-opacity">
+<div class="w-8 h-8 rounded-full bg-tertiary/20 text-tertiary flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-sm" data-icon="check">check</span>
+</div>
+<span class="text-[10px] font-label text-on-surface uppercase tracking-tight">Chunking</span>
+</div>
+<div class="flex flex-col items-center text-center opacity-100">
+<div class="w-8 h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center mb-2 relative">
+<span class="material-symbols-outlined text-sm" data-icon="schema">schema</span>
+</div>
+<span class="text-[10px] font-label text-on-surface uppercase tracking-tight">Embedding</span>
+</div>
+<div class="flex flex-col items-center text-center opacity-40">
+<div class="w-8 h-8 rounded-full bg-outline-variant/20 text-outline flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-sm" data-icon="database">database</span>
+</div>
+<span class="text-[10px] font-label text-on-surface uppercase tracking-tight">Vector Store</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Upload & Actions -->
+<div class="col-span-12 lg:col-span-4 space-y-8">
+<!-- Create New KB -->
+<button class="w-full h-20 group relative rounded-lg border-2 border-dashed border-outline-variant/30 hover:border-primary/50 flex items-center justify-center gap-3 transition-all">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-outline group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</div>
+<span class="font-headline font-bold text-on-surface-variant group-hover:text-primary transition-colors">Create New Knowledge Base</span>
+</button>
+<!-- Upload Zone -->
+<div class="bg-surface-container rounded-lg p-6 border border-outline-variant/10">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-headline font-bold text-on-surface">Ingest Data</h3>
+<span class="material-symbols-outlined text-outline" data-icon="cloud_upload">cloud_upload</span>
+</div>
+<div class="border-2 border-dashed border-outline-variant/20 bg-surface-container-low rounded-lg p-10 flex flex-col items-center text-center hover:bg-surface-container-highest/20 transition-colors cursor-pointer">
+<div class="mb-4 text-primary/40 group-hover:text-primary">
+<span class="material-symbols-outlined text-5xl" data-icon="upload_file">upload_file</span>
+</div>
+<p class="text-sm text-on-surface mb-1">Drag &amp; drop files to upload</p>
+<p class="text-xs text-outline mb-6">Supported: .txt, .pdf, .docx (Max 50MB)</p>
+<button class="bg-surface-container-highest px-4 py-2 rounded text-sm font-medium text-on-surface hover:bg-surface-container-high transition-colors">
+                            Select Files
+                        </button>
+</div>
+<div class="mt-6 space-y-3">
+<div class="flex items-center justify-between p-3 bg-surface-container-low rounded">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline" data-icon="description">description</span>
+<div class="flex flex-col">
+<span class="text-xs font-medium text-on-surface truncate w-32">Company_Policy_2024.pdf</span>
+<span class="text-[10px] text-outline">1.2 MB</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-error text-lg cursor-pointer hover:bg-error/10 p-1 rounded" data-icon="close">close</span>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container-low rounded">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline" data-icon="description">description</span>
+<div class="flex flex-col">
+<span class="text-xs font-medium text-on-surface truncate w-32">Quarterly_Report_Q3.docx</span>
+<span class="text-[10px] text-outline">4.5 MB</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-error text-lg cursor-pointer hover:bg-error/10 p-1 rounded" data-icon="close">close</span>
+</div>
+</div>
+</div>
+<!-- Intelligence Advisor Card -->
+<div class="bg-gradient-to-br from-primary/10 to-tertiary/10 rounded-lg p-6 border border-primary/20 relative overflow-hidden">
+<div class="absolute -right-4 -top-4 opacity-10">
+<span class="material-symbols-outlined text-8xl" data-icon="tips_and_updates">tips_and_updates</span>
+</div>
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="auto_awesome">auto_awesome</span>
+<span class="text-[0.6875rem] font-label text-primary uppercase tracking-widest">UrMail Intelligence</span>
+</div>
+<h4 class="font-headline font-bold text-on-surface mb-2">Optimize Your Context</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed">Large documents (50+ pages) are better processed as separate files to improve retrieval accuracy in complex SOP queries.</p>
+<a class="mt-4 inline-block text-[10px] font-label text-tertiary uppercase tracking-widest hover:underline" href="#">Read Documentation</a>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB Suppression Rule Active: No FAB on Management Screens -->
+</body></html>
